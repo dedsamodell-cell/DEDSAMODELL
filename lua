@@ -70,13 +70,13 @@ local function loadswimhubfile(file)
 end
 local function getswimhubasset(file)
     if isswimhubfile(file) then return false end
-    local success, returns = pcall(getcustomasset, "swimhub/new/files/"..file)
+    local success, returns = pcall(getcustomasset, "lua/new/files/"..file)
     if success then return returns else return print(returns) end
 end
 do
-    if not isfolder("swimhub") then makefolder("swimhub") end
-    if not isfolder("swimhub/new") then makefolder("swimhub/new") end
-    if not isfolder("swimhub/new/files") then makefolder("swimhub/new/files") end
+    if not isfolder("dedsamodell") then makefolder("lua") end
+    if not isfolder("dedsamodell/new") then makefolder("dedsamodell/new") end
+    if not isfolder("swimhub/new/files") then makefolder("dedsamodell/new/files") end
     local function getfiles(force, list)
         for _, file in list do
             if (force or not force and not isswimhubfile(file)) then
